@@ -1,0 +1,118 @@
+
+
+<div
+  style="
+    background-size: 1400px 700px;
+    background-image: url(https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fb3118e3e-38c1-11eb-a4fe-454ae9b80c8b.jpg?crop=6400%2C3600%2C160%2C846);
+  "
+>
+
+  <div class="banner-section">
+    <div class="row">
+      <div>
+        <input
+      style="
+      z-index: 0;
+      position: relative;
+        margin-left: 250px;
+        margin-top: -110px;
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        width: 700px;
+      "
+      type="text"
+      class="form-control"
+      [(ngModel)]="searchValue"
+      />
+      </div>
+      <div>
+        
+        <div class="banner-detail" style="visibility: hidden">
+            <h1 class="title1">RPTS</h1>
+          <h5 class="title2">Right Place To Shop</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="afterImg">
+  <p >RPTS</p>
+  <p >Right Place To Shop</p>
+  
+</div>
+
+
+
+<!-- [routerLink]="['/tvDetails', tv.id]" -->
+
+<div class="container mt-5">
+
+  <div class="row justify-content-center">
+    <div id="div1" class="card movie_card" *ngFor="let homeProduct of allProducts">
+      <a [routerLink]="['/homeProductsDetails', homeProduct.id]"
+        ><img class="card-img-top" alt="..." [src]="homeProduct.productImage"
+      /></a>
+
+      <div class="card-body">
+        <div class="tag bg-success">{{ homeProduct.productStatus }}</div>
+        <h5 class="card-title">{{ homeProduct.productName }}</h5>
+        <h5 class="card-title">{{ homeProduct.productPrice }} EG</h5>
+        <p class="description" *ngIf="homeProduct.toggleDiscription">
+          {{ homeProduct.productDescription }}
+        </p>
+      <button [routerLink]="['/shoppingCart']"  class="btn btn-warning d-block " style="margin-left: 90px; margin-bottom: 3px;">
+        Add to Cart
+      </button>
+        <button
+          class="btn btn-success " style="margin-left: 90px;"
+          (click)="toggleDetails(homeProduct.id)"
+        >
+          {{ homeProduct.toggleDiscription ? "Hide" : "See" }} Details
+        </button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<link  rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vidaloka&display=swap" rel="stylesheet"> -->
+
+<div style="margin-top: 20px; margin-bottom: 100px; margin-left: 100px;" >
+  <div class="container">
+    <div class="row m-b-n30 align-items-center justify-content-center">
+      <div class="col-10 col-lg-6 position-relative md-margin-9-rem-bottom wow animate__fadeIn" style="visibility: visible; animation-name: fadeIn;">
+                        <div class="w-70 overflow-hidden position-relative xs-w-80" style="margin-top: 40px;">
+                            <img src="https://i2-prod.manchestereveningnews.co.uk/incoming/article21150031.ece/ALTERNATES/s615b/1_GettyImages-1148906023.jpg" alt="" data-no-retina="">
+                        </div>
+                        <div class="position-absolute right-35px bottom-minus-50px w-50 lg-bottom-minus-30px xs-right-15px" data-wow-delay="0.2s" data-parallax-layout-ratio="1.1" style="bottom: -34.1953px;">
+                            <img src="https://i2-prod.manchestereveningnews.co.uk/incoming/article21150031.ece/ALTERNATES/s615b/1_GettyImages-1148906023.jpg" alt="" data-no-retina="">
+                        </div>
+                    </div>
+      <div class="col-lg-6 m-b-30 order-lg-last">
+        <div class="about-content mw-100">
+          <div class="banner-content section-heading" style="margin-top: 80px;">
+            <h5>ABOUT US
+            </h5>
+            <h2 class="banner-title">Right Place To Shop</h2>
+            <div class="title-icon-divider"><i class="fa fa-suitcase"></i></div>
+          </div>
+          <!--           <h2 class="title">Fast Service, Talented People <br> Secure Payment</h2> -->
+          <p class="p1">here is the right place to shop as much as you want and you will find everything that you hope to buy with spacial offers .</p>
+          <p>our major is to provide product with least prie in market  .</p>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

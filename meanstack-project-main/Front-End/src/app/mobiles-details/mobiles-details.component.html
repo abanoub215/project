@@ -1,0 +1,46 @@
+<div class="main">
+   
+    <div class="info">
+        <div class="overlay"></div>
+        <img src={{mobile.phoneImagePath}} alt="" class="mobile">
+        <input type="checkbox" id="rotateToggle">
+        <div id="maskCircle" class="circle">
+            <div class="feature one">
+                <img src="https://i.ibb.co/fXP6WLf/camera.png" alt="">
+                <img src="https://i.ibb.co/pd9VXn4/display.png">
+                <div>
+                    <h1>Camera & Display</h1>
+                    <p>{{mobile.camera}}<br>
+                        <br>
+                        {{mobile.display}}</p>
+                   
+                </div>
+            </div>
+            <div class="feature two">
+                <img src="https://i.ibb.co/3WC8vKm/processor.png" alt="">
+                <img src="https://i.ibb.co/fryNsNc/battery.png" alt="">
+                <div>
+                    <h1>Processor & battery</h1>
+                    <p>{{mobile.processor}}
+                       <br> <BR>{{mobile.battery}}</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+
+
+
+    <div class="controls">
+        <div>
+            <div style="margin-bottom: 60px; font-size: 90px; color: #eedfdf;"> {{mobile.price}}</div>
+
+        </div>
+        <label for="rotateToggle" id="upBtn"><img src="https://i.ibb.co/GRrFDzD/arrow.png" alt="" id="upBtn"></label>
+        <h3>Features</h3>
+        <label for="rotateToggle" id="downBtn"><img src="https://i.ibb.co/GRrFDzD/arrow.png" alt="" id="upBtn"></label>
+     <div> <button  class="btn btn-warning bold-btn" style="margin-top: 50px;">Add To Cart</button></div>
+    </div>
+    
+</div>

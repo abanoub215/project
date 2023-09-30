@@ -1,0 +1,34 @@
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css'>
+
+<div class="container-fluid bg-trasparent my-4 p-3" style="position: relative">
+  <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
+    <div class="col hp" *ngFor="let mobile of allMobiles">
+      <div class="card h-100 shadow-sm">
+        <a [routerLink]="['/mobilesDetails', mobile.id]">
+          <img [src]="mobile.phoneImagePath" class="card-img-top" alt="{{ mobile.title }}" />
+        </a>
+        <div class="label-top shadow-sm"></div>
+        <div class="card-body">
+          <div class="clearfix mb-3">
+            <span class="float-start badge rounded-pill bg-success">{{ mobile.price }}</span>
+          </div>
+          <h5 class="card-title">{{ mobile.title }}</h5>
+          <p *ngIf="mobile.toggledetails">{{ mobile.details }}</p>
+          <div class="d-grid gap-2 my-4">
+            
+            <button class="btn btn-warning bold-btn" (click)="toggleDetails(mobile.id)">
+              {{ mobile.toggledetails ? 'Hide' : 'See' }} Details
+            </button>
+            <button class="btn btn-warning bold-btn" [routerLink]="['/mobilesDetails', mobile.id]">Buy</button>
+
+          </div>
+          
+          <div class="clearfix mb-1">
+            <span class="float-start"><a href="#"><i class="fas fa-question-circle"></i></a></span>
+            <span class="float-end"><i class="far fa-heart" style="cursor: pointer"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

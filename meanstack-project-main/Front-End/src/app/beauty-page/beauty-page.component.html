@@ -1,0 +1,52 @@
+<div>
+  <input
+    style="
+      z-index: 0;
+      position: relative;
+      margin-left: 250px;
+      margin-top: -110px;
+      background-color: rgb(255, 255, 255);
+      color: rgb(0, 0, 0);
+      width: 700px;
+    "
+    type="text"
+    class="form-control"
+    [(ngModel)]="searchValue"
+  />
+</div>
+<div class="container" style="margin-top: 100px;">
+  <div class="row justify-content-center">
+    <div
+      id="div1"
+      class="card movie_card"
+      *ngFor="let beautyProduct of allBeautyProducts"
+    >
+      <a [routerLink]="['/homeProductsDetails', beautyProduct.id]"
+        ><img class="card-img-top" alt="..." [src]="beautyProduct.productImage"
+      /></a>
+
+      <div class="card-body">
+        <div class="tag bg-success">{{ beautyProduct.productStatus }}</div>
+        <h5 class="card-title">{{ beautyProduct.productName }}</h5>
+        <h5 class="card-title">{{ beautyProduct.productPrice }} EG</h5>
+        <p class="description" *ngIf="beautyProduct.toggleDiscription">
+          {{ beautyProduct.productDescription }}
+        </p>
+        <button
+          [routerLink]="['/homeProductsDetails', beautyProduct.id]"
+          class="btn btn-warning d-block"
+          style="margin-left: 110px; margin-bottom: 3px"
+        >
+          Order
+        </button>
+        <button
+          class="btn btn-success"
+          style="margin-left: 90px"
+          (click)="toggleDetails(beautyProduct.id)"
+        >
+          {{ beautyProduct.toggleDiscription ? "Hide" : "See" }} Details
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
